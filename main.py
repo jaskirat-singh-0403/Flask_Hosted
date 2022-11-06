@@ -20,7 +20,9 @@ def my_form_post():
     
     if len(data)==0:
         return
-    if(not(data.split("/")[-1].isalnum( ))):
+    zz=data.split("/")[-1]
+    zz=zz.split(".")[0]
+    if(not(zz.isalnum( ))):
             return render_template('output.html', message = "File Name must only contain alphnumeric characters")
     url = "https://www.africau.edu/images/default/sample.pdf"
     writer = PdfFileWriter()
