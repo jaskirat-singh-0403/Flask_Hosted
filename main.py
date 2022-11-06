@@ -5,7 +5,6 @@ from flask import Flask
 from flask import request
 from flask import render_template
 import numpy as np
-from matplotlib import pyplot as plt
 import os
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
