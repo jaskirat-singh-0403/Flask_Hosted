@@ -22,7 +22,7 @@ def my_form_post():
         return
     url = "https://www.africau.edu/images/default/sample.pdf"
     writer = PdfFileWriter()
-    remoteFile = urllib.request.urlopen("http://localhost:5000"+data).read()
+    remoteFile = urllib.request.urlopen("https://iapportal.herokuapp.com/"+data).read()
     memoryFile = BytesIO(remoteFile)
     pdfFile = PdfFileReader(memoryFile)
     data=""
