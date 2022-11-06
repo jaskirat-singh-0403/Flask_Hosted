@@ -20,6 +20,8 @@ def my_form_post():
     
     if len(data)==0:
         return
+    if(not(data.split("/")[-1].isalnum( ))):
+            return render_template('output.html', message = "File Name must only contain alphnumeric characters")
     url = "https://www.africau.edu/images/default/sample.pdf"
     writer = PdfFileWriter()
     remoteFile = urllib.request.urlopen("https://iapportal.herokuapp.com/"+data).read()
