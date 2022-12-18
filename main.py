@@ -31,7 +31,7 @@ def my_form_post():
             return render_template('output.html', message = "File Name must only contain alphnumeric characters")
     url = "https://www.africau.edu/images/default/sample.pdf"
     writer = PdfFileWriter()
-    remoteFile = urllib.request.urlopen("https://iapportal.onrender.com/"+data).read()
+    remoteFile = urllib.request.urlopen("https://iapportal.onrender.com"+data).read()
     memoryFile = BytesIO(remoteFile)
     pdfFile = PdfFileReader(memoryFile)
     data=""
