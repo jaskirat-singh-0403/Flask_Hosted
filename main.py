@@ -31,7 +31,7 @@ def my_form_post():
             return render_template('output.html', message = "File Name must only contain alphnumeric characters")
     url = "https://www.africau.edu/images/default/sample.pdf"
     writer = PdfFileWriter()
-    remoteFile = urllib.request.urlopen("http://localhost:8080/"+data).read()
+    remoteFile = urllib.request.urlopen("https://iapportal.onrender.com"+data).read()
     memoryFile = BytesIO(remoteFile)
     pdfFile = PdfFileReader(memoryFile)
     data=""
@@ -41,7 +41,7 @@ def my_form_post():
         data+=currentPage.extractText()
     bert_model = SBertSummarizer("paraphrase-MiniLM-L6-v2")
     summary = bert_model(data, num_sentences=10)
-    return render_template('FirstPage.html', message = summary)
+    return redirect('FirstPage.html', message = summary)
 
 @app.route('/plag', methods=['GET','POST'])
 def my_form_post1():
@@ -50,7 +50,7 @@ def my_form_post1():
     
     }
     
-    myobj = json.dumps({'email':'id','key':'key'})
+    myobj = json.dumps({'email':'jsingh17_be19@thapar.edu','key':'f05dd725-d354-466e-86df-4fc0552f361e'})
     datas = request.args
     data =datas.get("text")
     doc1=datas.get("text")
@@ -65,7 +65,7 @@ def my_form_post1():
     url = "https://www.africau.edu/images/default/sample.pdf"
     writer = PdfFileWriter()
     #remoteFile = urllib.request.urlopen(url).read()
-    remoteFile = urllib.request.urlopen("http://localhost:8080/"+data).read()
+    remoteFile = urllib.request.urlopen("https://iapportal.onrender.com/"+data).read()
     memoryFile = BytesIO(remoteFile)
     pdfFile = PdfFileReader(memoryFile)
     data=""
