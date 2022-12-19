@@ -50,7 +50,7 @@ def my_form_post1():
     
     }
     
-    myobj = json.dumps({'email':'jsingh17_be19@thapar.edu','key':'f05dd725-d354-466e-86df-4fc0552f361e'})
+    myobj = json.dumps({'email':'email','key':'key'})
     datas = request.args
     data =datas.get("text")
     doc1=datas.get("text")
